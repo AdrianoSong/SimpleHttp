@@ -19,6 +19,8 @@ import Foundation
 ///print(loginResult)
 /// ```
 public final class SimpleHttpRequest<T: Codable>: SimpleRequest {
+    public init() { }
+    
     public func perform(endpoint: any SimpleEndpoint) async throws -> T {
         let requestData = try endpoint.buildRequestData()
         var request = URLRequest(url: requestData.url)
