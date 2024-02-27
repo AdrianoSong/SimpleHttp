@@ -12,5 +12,12 @@ public struct RequestData: SimpleRequestData {
     public var url: URL
     public var method: String
     public var bodyData: Data?
-    public var extras: [String : Any] = [:]
+    public var extras: [String : Any]
+    
+    public init(url: URL, method: String, bodyData: Data? = nil, extras: [String : Any] = [:]) {
+        self.url = url
+        self.method = method
+        self.bodyData = bodyData
+        self.extras = extras
+    }
 }
